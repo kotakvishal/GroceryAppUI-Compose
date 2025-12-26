@@ -8,7 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import ktk.wishdroid.grocery_app_compose_ui.ui.components.BottomNav
-import ktk.wishdroid.grocery_app_compose_ui.ui.components.CategoryRow
+import ktk.wishdroid.grocery_app_compose_ui.ui.components.CategoryTabRow
 import ktk.wishdroid.grocery_app_compose_ui.ui.components.ProductRow
 import ktk.wishdroid.grocery_app_compose_ui.ui.components.PromoBanner
 import ktk.wishdroid.grocery_app_compose_ui.ui.components.SearchBar
@@ -28,7 +28,7 @@ fun HomeScreen() {
         ) {
             item { TopLocationBar() }
             item { SearchBar() }
-            item { CategoryRow() }
+            item { CategoryTabRow() }
             item { PromoBanner() }
             item { SectionTitle("Top selling fruits") }
             item { ProductRow() }

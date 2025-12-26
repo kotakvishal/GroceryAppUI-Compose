@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
@@ -30,7 +31,7 @@ fun ProductCard(
     var quantity by remember { mutableIntStateOf(0) }
 
     Card(
-        modifier = modifier.size(160.dp),
+        modifier = modifier.height(180.dp).width(140.dp),
         shape = RoundedCornerShape(12.dp)
     ) {
         Column(
@@ -48,6 +49,7 @@ fun ProductCard(
             Spacer(modifier = Modifier.height(8.dp))
 
             Text("Pineapple")
+            Spacer(modifier = Modifier.height(8.dp))
             Text("₹33")
 
             Spacer(modifier = Modifier.weight(1f))
