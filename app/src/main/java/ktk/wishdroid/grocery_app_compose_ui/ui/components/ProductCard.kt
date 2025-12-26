@@ -24,14 +24,20 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import ktk.wishdroid.grocery_app_compose_ui.ui.models.ProductUiModel
+
 @Composable
 fun ProductCard(
+    product: ProductUiModel,
     modifier: Modifier = Modifier
 ) {
     var quantity by remember { mutableIntStateOf(0) }
 
     Card(
-        modifier = modifier.height(180.dp).width(140.dp),
+        modifier = modifier
+            .height(180.dp)
+            .width(140.dp),
         shape = RoundedCornerShape(12.dp)
     ) {
         Column(
@@ -43,14 +49,23 @@ fun ProductCard(
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
+                    .height(70.dp)
                     .background(Color.LightGray, RoundedCornerShape(8.dp))
             )
 
             Spacer(modifier = Modifier.height(8.dp))
 
-            Text("Pineapple")
-            Spacer(modifier = Modifier.height(8.dp))
-            Text("₹33")
+            Text(
+                text = product.name,
+                fontSize = 14.sp
+            )
+
+            Spacer(modifier = Modifier.height(4.dp))
+
+            Text(
+                text = product.price,
+                fontSize = 14.sp
+            )
 
             Spacer(modifier = Modifier.weight(1f))
 
@@ -59,7 +74,7 @@ fun ProductCard(
                     onClick = { quantity = 1 },
                     modifier = Modifier.fillMaxWidth()
                 ) {
-                    Text("Add to cart")
+                    Text("Buy")
                 }
             } else {
                 QuantitySelector(
