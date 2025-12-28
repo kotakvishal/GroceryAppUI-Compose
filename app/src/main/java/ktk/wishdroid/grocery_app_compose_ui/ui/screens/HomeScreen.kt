@@ -1,6 +1,8 @@
 package ktk.wishdroid.grocery_app_compose_ui.ui.screens
 
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.Scaffold
@@ -10,6 +12,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import ktk.wishdroid.grocery_app_compose_ui.ui.components.BottomNav
 import ktk.wishdroid.grocery_app_compose_ui.ui.components.CategoryTabRow
+import ktk.wishdroid.grocery_app_compose_ui.ui.components.GradientHorizontalDivider
 import ktk.wishdroid.grocery_app_compose_ui.ui.components.ProductGrid
 import ktk.wishdroid.grocery_app_compose_ui.ui.components.ProductRow
 import ktk.wishdroid.grocery_app_compose_ui.ui.components.PromoBanner
