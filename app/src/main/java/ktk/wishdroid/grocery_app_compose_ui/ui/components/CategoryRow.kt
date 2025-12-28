@@ -36,13 +36,13 @@ fun CategoryTabRow() {
     ScrollableTabRow(
         selectedTabIndex = selectedIndex,
         edgePadding = 16.dp,
-        containerColor = Color.Black,
+        containerColor = Color.Transparent,
         indicator = { tabPositions ->
             TabRowDefaults.Indicator(
                 modifier = Modifier
                     .tabIndicatorOffset(tabPositions[selectedIndex]),
                 height = 3.dp,
-                color = Color.Green
+                color = Color.LightGray
             )
         }
     ) {
@@ -52,7 +52,7 @@ fun CategoryTabRow() {
             Tab(
                 selected = selectedIndex == index,
                 onClick = { selectedIndex = index },
-                selectedContentColor = Color.Green,
+                selectedContentColor = Color.LightGray,
                 unselectedContentColor = Color.LightGray
             ) {
 
@@ -66,7 +66,7 @@ fun CategoryTabRow() {
                             .size(56.dp)
                             .background(
                                 if (selectedIndex == index)
-                                    Color.Green
+                                    Color.LightGray
                                 else
                                     Color.DarkGray,
                                 CircleShape

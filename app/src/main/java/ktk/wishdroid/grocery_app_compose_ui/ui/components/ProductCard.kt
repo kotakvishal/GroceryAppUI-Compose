@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -15,6 +16,7 @@ import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -38,51 +40,53 @@ fun ProductCard(
         modifier = modifier
             .height(180.dp)
             .width(140.dp),
-        shape = RoundedCornerShape(12.dp)
+        shape = RoundedCornerShape(12.dp),
+        colors = CardDefaults.cardColors(
+            containerColor = Color.Transparent
+        ),
+        elevation = CardDefaults.cardElevation(0.dp)
     ) {
-        Column(
+        Box(
             modifier = Modifier
-                .fillMaxWidth()
+                .fillMaxSize()
+                .background(
+                    Color(0xFF151515).copy(alpha = 0.85f),
+                    RoundedCornerShape(12.dp)
+                )
                 .padding(8.dp)
         ) {
-
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(70.dp)
-                    .background(Color.LightGray, RoundedCornerShape(8.dp))
-            )
-
-            Spacer(modifier = Modifier.height(8.dp))
-
-            Text(
-                text = product.name,
-                fontSize = 14.sp
-            )
-
-            Spacer(modifier = Modifier.height(4.dp))
-
-            Text(
-                text = product.price,
-                fontSize = 14.sp
-            )
-
-            Spacer(modifier = Modifier.weight(1f))
-
-            if (quantity == 0) {
-                Button(
-                    onClick = { quantity = 1 },
-                    modifier = Modifier.fillMaxWidth()
-                ) {
-                    Text("Buy")
-                }
-            } else {
-                QuantitySelector(
-                    quantity = quantity,
-                    onIncrease = { quantity++ },
-                    onDecrease = { quantity-- }
+            Column {
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(70.dp)
+                        .background(Color.LightGray, RoundedCornerShape(8.dp))
                 )
+
+                Spacer(Modifier.height(8.dp))
+
+                Text(product.name, fontSize = 14.sp, color = Color.White)
+                Spacer(Modifier.height(4.dp))
+                Text(product.price, fontSize = 14.sp, color = Color.LightGray)
+
+                Spacer(Modifier.weight(1f))
+
+                if (quantity == 0) {
+                    Button(
+                        onClick = { quantity = 1 },
+                        modifier = Modifier.fillMaxWidth()
+                    ) {
+                        Text("Buy")
+                    }
+                } else {
+                    QuantitySelector(
+                        quantity = quantity,
+                        onIncrease = { quantity++ },
+                        onDecrease = { quantity-- }
+                    )
+                }
             }
         }
     }
+
 }
