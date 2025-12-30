@@ -17,53 +17,53 @@ val topSellingProducts = listOf(
     ProductUiModel(
         name = "Apple",
         price = "₹120",
-        iconRes = R.drawable.ic_pineapple
+        iconRes = R.drawable.ic_apple
     ),
     ProductUiModel(
         name = "Banana",
         price = "₹40",
-        iconRes = R.drawable.ic_pineapple
+        iconRes = R.drawable.ic_banana
     ),
     ProductUiModel(
         name = "Orange",
         price = "₹60",
-        iconRes = R.drawable.ic_pineapple
+        iconRes = R.drawable.ic_orange
     ),
     ProductUiModel(
         name = "Mango",
         price = "₹90",
-        iconRes = R.drawable.ic_pineapple
+        iconRes = R.drawable.ic_mango
     )
 )
 val exploreMoreProducts = listOf(
     ProductUiModel(
         name = "Tomato",
         price = "₹25",
-        iconRes = R.drawable.ic_pineapple
+        iconRes = R.drawable.ic_tomato
     ),
     ProductUiModel(
         name = "Potato",
         price = "₹20",
-        iconRes = R.drawable.ic_pineapple
+        iconRes = R.drawable.ic_potato
     ),
     ProductUiModel(
         name = "Onion",
         price = "₹30",
-        iconRes = R.drawable.ic_pineapple
+        iconRes = R.drawable.ic_onion
     ),
     ProductUiModel(
         name = "Capsicum",
         price = "₹50",
-        iconRes = R.drawable.ic_pineapple
+        iconRes = R.drawable.ic_capsicum
     ),
     ProductUiModel(
         name = "Carrot",
         price = "₹45",
-        iconRes = R.drawable.ic_pineapple
+        iconRes = R.drawable.ic_carrot
     ),
     ProductUiModel(
         name = "Cucumber",
         price = "₹35",
-        iconRes = R.drawable.ic_pineapple
+        iconRes = R.drawable.ic_capsicum
     )
 )

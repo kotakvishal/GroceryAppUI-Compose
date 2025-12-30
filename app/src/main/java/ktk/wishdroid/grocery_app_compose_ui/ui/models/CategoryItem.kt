@@ -7,13 +7,12 @@ data class CategoryItem(
     val iconRes: Int
 )
 val categories = listOf(
-    CategoryItem("Deal", R.drawable.ic_pizza),
-    CategoryItem("Bakery", R.drawable.ic_pizza),
-    CategoryItem("Dairy", R.drawable.ic_pizza),
+    CategoryItem("Bakery", R.drawable.ic_bread),
+    CategoryItem("Dairy", R.drawable.ic_dairy),
     CategoryItem("Pizza", R.drawable.ic_pizza),
-    CategoryItem("Vegetables", R.drawable.ic_pizza),
-    CategoryItem("Chicken", R.drawable.ic_pizza),
-    CategoryItem("Burger", R.drawable.ic_pizza),
-    CategoryItem("Taco", R.drawable.ic_pizza),
-    CategoryItem("Subway", R.drawable.ic_pizza)
+    CategoryItem("Vegetables", R.drawable.ic_veg),
+    CategoryItem("Chicken", R.drawable.ic_chicken),
+    CategoryItem("Burger", R.drawable.ic_burger),
+    CategoryItem("Taco", R.drawable.ic_taco),
+    CategoryItem("Wraps", R.drawable.ic_wraps)
 )
