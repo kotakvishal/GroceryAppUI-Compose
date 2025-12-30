@@ -1,30 +1,28 @@
 package ktk.wishdroid.grocery_app_compose_ui.ui.models
 
-import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
-import androidx.compose.ui.graphics.vector.ImageVector
+
+import androidx.annotation.DrawableRes
+import ktk.wishdroid.grocery_app_compose_ui.R
 
 sealed class BottomNavItem(
     val title: String,
-    val icon: ImageVector
+    @DrawableRes val iconRes: Int
 ) {
     object Home : BottomNavItem(
         title = "Home",
-        icon = Icons.Filled.Home
+        iconRes = R.drawable.ic_home
     )
 
     object Deals : BottomNavItem(
         title = "Deals",
-        icon = Icons.Filled.LocalOffer
+        iconRes = R.drawable.ic_deal
     )
 
-    object Seasons : BottomNavItem(
-        title = "Seasons",
-        icon = Icons.Filled.Event
-    )
 
     object Health : BottomNavItem(
         title = "Health",
-        icon = Icons.Filled.Favorite
+        iconRes = R.drawable.ic_health
     )
 }
+
