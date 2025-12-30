@@ -49,24 +49,23 @@ fun HomeScreen() {
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .fillMaxHeight(0.30f)
+                    .fillMaxHeight(0.32f)
                     .background(
                         brush = Brush.horizontalGradient(
-                            colors = listOf(
-                                Color(0xFF121214),
-                                Color(0xFF1A1014),
-                                Color(0xFF231015),
-                                Color(0xFF3A1620)
+                            colorStops = arrayOf(
+                                0.0f to Color(0x4D3A1620),
+                                0.45f to Color(0x803A1620),
+                                0.75f to Color(0xCC3A1620),
+                                1.0f to Color(0xFF3A1620)
                             )
                         )
                     )
             )
 
-
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .fillMaxHeight(0.30f)
+                    .fillMaxHeight(0.32f)
                     .background(
                         brush = Brush.verticalGradient(
                             colors = listOf(
@@ -76,7 +75,6 @@ fun HomeScreen() {
                         )
                     )
             )
-
 
             Box(
                 modifier = Modifier
@@ -93,6 +91,7 @@ fun HomeScreen() {
                     )
             )
 
+
             Column(
                 modifier = Modifier
                     .fillMaxSize()
@@ -100,13 +99,23 @@ fun HomeScreen() {
                     .verticalScroll(rememberScrollState())
             ) {
 
+                Spacer(modifier = Modifier.height(8.dp))
+
                 TopLocationBar()
+
+                Spacer(modifier = Modifier.height(12.dp))
 
                 SearchBar()
 
+                Spacer(modifier = Modifier.height(16.dp))
+
                 CategoryTabRow()
 
+                Spacer(modifier = Modifier.height(20.dp))
+
                 PromoBanner()
+
+                Spacer(modifier = Modifier.height(24.dp))
 
                 SectionTitle(
                     title = "Top selling fruits",
@@ -118,13 +127,11 @@ fun HomeScreen() {
                     modifier = Modifier.padding(top = 12.dp)
                 )
 
+                Spacer(modifier = Modifier.height(28.dp))
+
                 SectionTitle(
                     title = "Explore more",
-                    modifier = Modifier.padding(
-                        start = 16.dp,
-                        end = 16.dp,
-                        top = 24.dp
-                    )
+                    modifier = Modifier.padding(horizontal = 16.dp)
                 )
 
                 ProductGrid(
@@ -132,7 +139,7 @@ fun HomeScreen() {
                     modifier = Modifier.padding(top = 12.dp)
                 )
 
-                Spacer(modifier = Modifier.height(24.dp))
+                Spacer(modifier = Modifier.height(32.dp))
             }
         }
     }
