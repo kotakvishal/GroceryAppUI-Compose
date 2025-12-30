@@ -1,23 +1,69 @@
 package ktk.wishdroid.grocery_app_compose_ui.ui.models
 
+import ktk.wishdroid.grocery_app_compose_ui.R
+
 data class ProductUiModel(
-    val id: Int,
     val name: String,
-    val price: String
-)
-val topSellingProducts = listOf(
-    ProductUiModel(1, "Pineapple", "₹33"),
-    ProductUiModel(2, "Apple", "₹120"),
-    ProductUiModel(3, "Banana", "₹40"),
-    ProductUiModel(4, "Orange", "₹60"),
-    ProductUiModel(5, "Mango", "₹90")
+    val price: String,
+    val iconRes: Int
 )
 
+val topSellingProducts = listOf(
+    ProductUiModel(
+        name = "Pineapple",
+        price = "₹33",
+        iconRes = R.drawable.ic_pineapple
+    ),
+    ProductUiModel(
+        name = "Apple",
+        price = "₹120",
+        iconRes = R.drawable.ic_pineapple
+    ),
+    ProductUiModel(
+        name = "Banana",
+        price = "₹40",
+        iconRes = R.drawable.ic_pineapple
+    ),
+    ProductUiModel(
+        name = "Orange",
+        price = "₹60",
+        iconRes = R.drawable.ic_pineapple
+    ),
+    ProductUiModel(
+        name = "Mango",
+        price = "₹90",
+        iconRes = R.drawable.ic_pineapple
+    )
+)
 val exploreMoreProducts = listOf(
-    ProductUiModel(6, "Tomato", "₹25"),
-    ProductUiModel(7, "Potato", "₹20"),
-    ProductUiModel(8, "Onion", "₹30"),
-    ProductUiModel(9, "Capsicum", "₹50"),
-    ProductUiModel(10, "Carrot", "₹45"),
-    ProductUiModel(11, "Cucumber", "₹35")
+    ProductUiModel(
+        name = "Tomato",
+        price = "₹25",
+        iconRes = R.drawable.ic_pineapple
+    ),
+    ProductUiModel(
+        name = "Potato",
+        price = "₹20",
+        iconRes = R.drawable.ic_pineapple
+    ),
+    ProductUiModel(
+        name = "Onion",
+        price = "₹30",
+        iconRes = R.drawable.ic_pineapple
+    ),
+    ProductUiModel(
+        name = "Capsicum",
+        price = "₹50",
+        iconRes = R.drawable.ic_pineapple
+    ),
+    ProductUiModel(
+        name = "Carrot",
+        price = "₹45",
+        iconRes = R.drawable.ic_pineapple
+    ),
+    ProductUiModel(
+        name = "Cucumber",
+        price = "₹35",
+        iconRes = R.drawable.ic_pineapple
+    )
 )

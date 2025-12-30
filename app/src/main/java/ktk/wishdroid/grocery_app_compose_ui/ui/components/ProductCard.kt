@@ -1,5 +1,6 @@
 package ktk.wishdroid.grocery_app_compose_ui.ui.components
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -12,6 +13,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
@@ -28,6 +30,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import ktk.wishdroid.grocery_app_compose_ui.ui.models.ProductUiModel
+import androidx.compose.material3.Icon
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
+import ktk.wishdroid.grocery_app_compose_ui.R
 
 @Composable
 fun ProductCard(
@@ -55,21 +62,46 @@ fun ProductCard(
                 )
                 .padding(8.dp)
         ) {
-            Column {
+            Column(
+                modifier = Modifier.fillMaxSize()
+            ) {
+
                 Box(
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(70.dp)
-                        .background(Color.LightGray, RoundedCornerShape(8.dp))
+                        .background(
+                            Color(0xFF2A2A2A),
+                            RoundedCornerShape(8.dp)
+                        ),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Image(
+                        painter = painterResource(id = product.iconRes),
+                        contentDescription = product.name,
+                        modifier = Modifier.wrapContentSize(),
+                        contentScale = ContentScale.Fit
+                    )
+
+                }
+
+                Spacer(modifier = Modifier.height(8.dp))
+
+                Text(
+                    text = product.name,
+                    fontSize = 14.sp,
+                    color = Color.White
                 )
 
-                Spacer(Modifier.height(8.dp))
+                Spacer(modifier = Modifier.height(4.dp))
 
-                Text(product.name, fontSize = 14.sp, color = Color.White)
-                Spacer(Modifier.height(4.dp))
-                Text(product.price, fontSize = 14.sp, color = Color.LightGray)
+                Text(
+                    text = product.price,
+                    fontSize = 14.sp,
+                    color = Color.LightGray
+                )
 
-                Spacer(Modifier.weight(1f))
+                Spacer(modifier = Modifier.weight(1f))
 
                 if (quantity == 0) {
                     Button(
@@ -88,5 +120,4 @@ fun ProductCard(
             }
         }
     }
-
 }
