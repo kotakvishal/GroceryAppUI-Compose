@@ -47,7 +47,7 @@ fun PromoBanner() {
     ) {
 
         Column(
-            modifier = Modifier.fillMaxWidth(0.65f)
+            modifier = Modifier.fillMaxWidth(0.7f)
         ) {
             Text(
                 text = "Shop Your Favorite Groceries\nQuickly & Affordably!",

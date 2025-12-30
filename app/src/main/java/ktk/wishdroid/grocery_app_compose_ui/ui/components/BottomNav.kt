@@ -30,6 +30,8 @@ fun BottomNav(
     onItemSelected: (BottomNavItem) -> Unit = {}
 ) {
 
+    val maroon = Color(0xFF7B1E2B)
+
     Box {
 
         Box(
@@ -51,6 +53,7 @@ fun BottomNav(
             containerColor = Color(0xFF0E0E0E),
             modifier = Modifier.align(Alignment.BottomCenter)
         ) {
+
             bottomNavItems.forEach { item ->
 
                 val selected = item == selectedItem
@@ -58,22 +61,24 @@ fun BottomNav(
                 NavigationBarItem(
                     selected = selected,
                     onClick = { onItemSelected(item) },
+
+                    colors = androidx.compose.material3.NavigationBarItemDefaults.colors(
+                        indicatorColor = Color.Transparent
+                    ),
+
                     icon = {
                         Icon(
                             painter = painterResource(item.iconRes),
                             contentDescription = item.title,
                             modifier = Modifier.size(20.dp),
-                            tint = if (selected) Color(0xFF2FAE60) else Color.Gray
+                            tint = if (selected) maroon else Color.Gray
                         )
                     },
                     label = {
                         Text(
                             text = item.title,
-                            color = if (selected)
-                                Color(0xFF2FAE60)
-                            else
-                                Color.Gray,
-                            fontSize = 12.sp
+                            fontSize = 12.sp,
+                            color = if (selected) maroon else Color.Gray
                         )
                     },
                     alwaysShowLabel = true
@@ -83,5 +88,3 @@ fun BottomNav(
         }
     }
 }
-
-
