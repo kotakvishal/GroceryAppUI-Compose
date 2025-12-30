@@ -104,12 +104,9 @@ fun ProductCard(
                 Spacer(modifier = Modifier.weight(1f))
 
                 if (quantity == 0) {
-                    Button(
-                        onClick = { quantity = 1 },
-                        modifier = Modifier.fillMaxWidth()
-                    ) {
-                        Text("Buy")
-                    }
+                    AddToCartButton(
+                        onClick = { quantity = 1 }
+                    )
                 } else {
                     QuantitySelector(
                         quantity = quantity,
@@ -117,6 +114,7 @@ fun ProductCard(
                         onDecrease = { quantity-- }
                     )
                 }
+
             }
         }
     }
