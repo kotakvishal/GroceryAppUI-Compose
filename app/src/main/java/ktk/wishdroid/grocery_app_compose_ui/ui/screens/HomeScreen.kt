@@ -62,6 +62,22 @@ fun HomeScreen() {
                     )
             )
 
+
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .fillMaxHeight(0.30f)
+                    .background(
+                        brush = Brush.verticalGradient(
+                            colors = listOf(
+                                Color.Transparent,
+                                Color(0xFF121214)
+                            )
+                        )
+                    )
+            )
+
+
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -76,7 +92,6 @@ fun HomeScreen() {
                         )
                     )
             )
-
 
             Column(
                 modifier = Modifier
